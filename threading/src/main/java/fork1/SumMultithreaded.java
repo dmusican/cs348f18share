@@ -56,7 +56,7 @@ public class SumMultithreaded {
         return ans;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         int[] mynums = {5, 1, 4, 6, 7};
         System.out.println(sum(mynums, 4));
     }
