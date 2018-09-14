@@ -28,10 +28,9 @@ class SumThread extends Thread {
             SumThread left = new SumThread(arr, lo, (lo+hi)/2);
             SumThread right = new SumThread(arr, (lo+hi)/2, hi);
             left.start();
-            right.start();
+            right.run();
             try {
                 left.join();
-                right.join();
                 ans = left.ans + right.ans;
             } catch (InterruptedException e) {
                 System.out.println("Interrupting cow Moo");
