@@ -22,7 +22,7 @@ class SumThread extends Thread {
     public void run() {
         if (hi - lo < SEQUENTIAL_CUTOFF) {
             for (int i = lo; i < hi; i++) {
-                ans += Math.sin(arr[i]);
+                ans += (arr[i]);
             }
         } else {
             SumThread left = new SumThread(arr, lo, (lo+hi)/2);
