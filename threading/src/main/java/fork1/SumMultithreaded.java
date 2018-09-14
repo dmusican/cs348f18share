@@ -1,3 +1,5 @@
+package fork1;
+
 /**
  * This thread finds the sum of the sine values of a subsection of an array.
  * I know, summing the sine values (i.e., Math.sin) seems like a silly task.
@@ -52,6 +54,11 @@ public class SumMultithreaded {
             ans += ts[i].getAns();
         }
         return ans;
+    }
+
+    public static void main(String[] args) {
+        int[] mynums = {5, 1, 4, 6, 7};
+        System.out.println(sum(mynums, 4));
     }
 
 }
