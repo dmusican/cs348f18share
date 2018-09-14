@@ -52,15 +52,18 @@ public class SumMultithreaded {
      * @return sum of the array's elements
      * @throws InterruptedException shouldn't happen
      */
-    public static double sum(int[] arr, int numThreads) throws InterruptedException {
+    public static double sum(int[] arr) throws InterruptedException {
         SumThread t = new SumThread(arr, 0, arr.length);
         t.run();
         return t.getAns();
     }
 
     public static void main(String[] args) throws InterruptedException {
-        int[] mynums = {5, 1, 4, 6, 7};
-        System.out.println(sum(mynums, 4));
+        int[] mynums = new int[100];
+        for (int i=0; i < mynums.length; i++) {
+            mynums[i] = i;
+        }
+        System.out.println(sum(mynums));
     }
 
 }
