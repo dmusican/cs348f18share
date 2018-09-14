@@ -61,7 +61,7 @@ public class SumMultithreaded {
     public static void main(String[] args) throws InterruptedException {
         int[] mynums = new int[100];
         for (int i=0; i < mynums.length; i++) {
-            mynums[i] = i;
+            mynums[i] = i+1;
         }
         System.out.println(sum(mynums));
     }
