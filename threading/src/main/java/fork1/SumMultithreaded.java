@@ -10,6 +10,7 @@ class SumThread extends Thread {
     private int lo, hi;
     private int[] arr;
     private double ans = 0;
+    public static final int SEQUENTIAL_CUTOFF = 10;
 
     public SumThread(int[] arr, int lo, int hi) {
         this.lo = lo;
@@ -19,8 +20,22 @@ class SumThread extends Thread {
 
     @Override
     public void run() {
-        for (int i = lo; i < hi; i++) {
-            ans += Math.sin(arr[i]);
+        if (hi - lo < SEQUENTIAL_CUTOFF) {
+            for (int i = lo; i < hi; i++) {
+                ans += Math.sin(arr[i]);
+            }
+        } else {
+            SumThread left = new SumThread(arr, lo, (lo+hi)/2);
+            SumThread right = new SumThread(arr, (lo+hi)/2, hi);
+            left.start();
+            right.start();
+            try {
+                left.join();
+                right.join();
+                ans = left.ans + right.ans;
+            } catch (InterruptedException e) {
+                System.out.println("Interrupting cow Moo");
+            }
         }
     }
 
@@ -38,22 +53,9 @@ public class SumMultithreaded {
      * @throws InterruptedException shouldn't happen
      */
     public static double sum(int[] arr, int numThreads) throws InterruptedException {
-        int len = arr.length;
-        double ans = 0;
-
-        // Create and start threads.
-        SumThread[] ts = new SumThread[numThreads];
-        for (int i = 0; i < numThreads; i++) {
-            ts[i] = new SumThread(arr, (i * len) / numThreads, ((i + 1) * len / numThreads));
-            ts[i].start();
-        }
-
-        // Wait for the threads to finish and sum their results.
-        for (int i = 0; i < numThreads; i++) {
-            ts[i].join();
-            ans += ts[i].getAns();
-        }
-        return ans;
+        SumThread t = new SumThread(arr, 0, arr.length);
+        t.run();
+        return t.getAns();
     }
 
     public static void main(String[] args) throws InterruptedException {
