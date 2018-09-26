@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 // What does it take to fix this class to be threadsafe for all possible uses,
 // not necessarily just the sample main that I provided?
