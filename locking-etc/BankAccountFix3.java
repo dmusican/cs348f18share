@@ -1,18 +1,14 @@
 public class BankAccount {
     private int balance;
 
-    public void setBalance(int balance) {
-        synchronized (this) {
-            this.balance = balance;
-        }
+    public synchronized void setBalance(int balance) {
+        this.balance = balance;
     }
 
-    public void withdraw(int amount) {
-        synchronized (this) {
+    public synchronized void withdraw(int amount) {
             int b = balance;
             int a = amount;
             int ans = b - a;
             balance = ans;
-        }
     }
 }
