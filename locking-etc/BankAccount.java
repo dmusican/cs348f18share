@@ -6,6 +6,10 @@ public class BankAccount {
     }
 
     public void withdraw(int amount) {
-        balance = balance - amount;
+        //balance = balance - amount;
+        int b = balance;
+        int a = amount;
+        int ans = b - a;
+        balance = ans;
     }
 }
