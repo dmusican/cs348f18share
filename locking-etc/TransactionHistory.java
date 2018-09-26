@@ -1,4 +1,5 @@
-import java.util.*;
+import java.util.ArrayList;
+import java.util.List;
 
 // What does it take to fix this class to be threadsafe for all possible uses,
 // not necessarily just the sample main that I provided?
