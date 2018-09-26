@@ -18,8 +18,12 @@ public class TransactionHistory {
         history.remove(value);
     }
 
-    public ArrayList<Integer> getHistory() {
-        return history;
+    // THIS IS BAD.
+    // Option 1: don't do this.
+    // Option 2. Make a copy of the list and return that.
+    // Option 3: see below
+    public List<Integer> getHistory() {
+        return Collections.unmodifiableList(history);
     }
 
     public static void main(String[] args) throws InterruptedException {
