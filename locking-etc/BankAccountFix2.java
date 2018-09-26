@@ -1,15 +1,14 @@
 public class BankAccount {
     private int balance;
-    private Object bankLock = new Object();
 
     public void setBalance(int balance) {
-        synchronized (bankLock) {
+        synchronized (this) {
             this.balance = balance;
         }
     }
 
     public void withdraw(int amount) {
-        synchronized (bankLock) {
+        synchronized (this) {
             int b = balance;
             int a = amount;
             int ans = b - a;
