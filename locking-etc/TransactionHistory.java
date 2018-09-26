@@ -23,7 +23,7 @@ public class TransactionHistory {
     // THIS IS BAD.
     // Option 1: don't do this.
     // Option 2. Make a copy of the list and return that.
-    // Option 3: see below
+    // Option 3: see below, but doesn't prevent collisions when I write and they read. Beware.
     public List<Integer> getHistory() {
         return Collections.unmodifiableList(history);
     }
