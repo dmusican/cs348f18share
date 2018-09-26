@@ -10,11 +10,11 @@ public class TransactionHistory {
         history = new ArrayList<Integer>();
     }
 
-    public void synchronized add(int value) {
+    public synchronized void add(int value) {
         history.add(value);
     }
 
-    public void synchronized remove(int value) {
+    public synchronized void remove(int value) {
         history.remove(value);
     }
 
