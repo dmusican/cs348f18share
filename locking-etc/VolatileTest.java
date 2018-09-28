@@ -13,6 +13,7 @@ public class VolatileTest {
         public void run() {
             int localValue = sharedValue;
             while (true){
+                System.out.println(sharedValue);
                 if( localValue != sharedValue){
                     System.out.println(
                         "Read new sharedValue : "+
