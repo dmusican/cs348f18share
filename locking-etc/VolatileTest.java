@@ -4,7 +4,7 @@ public class VolatileTest {
     private static int sharedValue = 0;
 
     public static void main(String[] args) {
-        new Reader().start();
+        // new Reader().start();
         new Incrementer().start();
     }
 
