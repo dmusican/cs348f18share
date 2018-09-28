@@ -1,4 +1,4 @@
-// If f and and g
+// If f and and g run in different threads, can ERROR get printed?
 
 public class C {
     private int x = 0;
