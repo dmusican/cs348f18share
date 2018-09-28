@@ -1,7 +1,7 @@
 // https://dzone.com/articles/java-volatile-keyword0-
 public class VolatileTest {
 
-    private static int sharedValue = 0;
+    private static volatile int sharedValue = 0;
 
     public static void main(String[] args) {
         new Reader().start();
