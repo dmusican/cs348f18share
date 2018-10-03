@@ -42,6 +42,6 @@ class BankAccount {
         };
 
         t1.start();
-        t2.start();
+        //t2.start();
     }
 }
