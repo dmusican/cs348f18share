@@ -13,10 +13,14 @@ class BankAccount2 {
         balance += amt;                   // line E
     }                                     // line F
 
-    synchronized void transferTo(int amt,
-                                 BankAccount other) {
-        this.withdraw(amt);               // line G
-        other.deposit(amt);               // line H                    
+    void transferTo(int amt,
+                    BankAccount2 other) {
+        synchronized (this) {
+            synchronized (other) {
+                this.withdraw(amt);      // line G
+                other.deposit(amt);      // line H
+            }
+        }
     }
 
     public static void main(String[] args) {
