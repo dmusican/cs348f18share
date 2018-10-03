@@ -5,7 +5,7 @@ class BankAccount3 {
     private int balance;
     private int id; 
 
-    public BankAccount3(int balance) {
+    public synchronized BankAccount3(int balance) {
         this.balance = balance;
         id = nextId.getAndIncrement();
     }
