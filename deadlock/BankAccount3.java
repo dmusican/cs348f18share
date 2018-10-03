@@ -1,12 +1,12 @@
-class BankAccount2 {
+class BankAccount3 {
     private static int nextId = 0;
     private int balance;
     private int id; 
 
-    public BankAccount2(int balance) {
+    public BankAccount3(int balance) {
         this.balance = balance;
         id = nextId;
-        nextid++;
+        nextId++;
     }
     
     synchronized void withdraw(int amt) { // line A
@@ -17,19 +17,38 @@ class BankAccount2 {
         balance += amt;                   // line E
     }                                     // line F
 
+
+
+
+
+
+
+
+
+    
     void transferTo(int amt,
-                    BankAccount2 other) {
-        synchronized (this) {
-            synchronized (other) {
-                this.withdraw(amt);      // line G
-                other.deposit(amt);      // line H
+                    BankAccount3 other) {
+        if (this.id < other.id) {
+            synchronized (this) {
+                synchronized (other) {
+                    this.withdraw(amt);
+                    other.deposit(amt);
+                }
             }
+        } else {
+            synchronized (other) {
+                synchronized (this) {
+                    this.withdraw(amt);
+                    other.deposit(amt);
+                }
+            }
+            
         }
     }
 
     public static void main(String[] args) {
-        BankAccount2 one = new BankAccount2(1000);
-        BankAccount2 two = new BankAccount2(2000);
+        BankAccount3 one = new BankAccount3(1000);
+        BankAccount3 two = new BankAccount3(2000);
 
         Thread t1 = new Thread() {
             public void run() {
