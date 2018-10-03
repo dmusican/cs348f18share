@@ -15,8 +15,8 @@ class BankAccount {
 
     synchronized void transferTo(int amt,
                                  BankAccount other) {
-        this.withdraw(amt);
-        other.deposit(amt);                                   
+        this.withdraw(amt);               // line G
+        other.deposit(amt);               // line H                    
     }
 
     public static void main(String[] args) {
