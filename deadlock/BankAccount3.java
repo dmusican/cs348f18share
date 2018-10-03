@@ -1,5 +1,6 @@
 class BankAccount3 {
-    private static int nextId = 0;
+    private static AtomicInteger nextId =
+        new AtomicInteger(0);
     private int balance;
     private int id; 
 
