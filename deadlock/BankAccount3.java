@@ -7,8 +7,7 @@ class BankAccount3 {
 
     public BankAccount3(int balance) {
         this.balance = balance;
-        id = nextId;
-        nextId++;
+        id = nextId.getAndIncrement();
     }
     
     synchronized void withdraw(int amt) { // line A
