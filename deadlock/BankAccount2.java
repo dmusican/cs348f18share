@@ -1,7 +1,7 @@
-class BankAccount {
+class BankAccount2 {
     private int balance;
 
-    public BankAccount(int balance) {
+    public BankAccount2(int balance) {
         this.balance = balance;
     }
     
@@ -20,8 +20,8 @@ class BankAccount {
     }
 
     public static void main(String[] args) {
-        BankAccount one = new BankAccount(1000);
-        BankAccount two = new BankAccount(2000);
+        BankAccount2 one = new BankAccount2(1000);
+        BankAccount2 two = new BankAccount2(2000);
 
         Thread t1 = new Thread() {
             public void run() {
