@@ -25,7 +25,7 @@ class Drop {
     try {
       while (!full) wait();
       full = false;
-      notify();
+      notifyAll();
       return message;
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
@@ -38,7 +38,7 @@ class Drop {
       full = true;
       System.out.println("Putting: " + message);
       this.message = message;
-      notify();
+      notifyAll();
     } catch (InterruptedException e) {
       throw new RuntimeException(e);
     }
