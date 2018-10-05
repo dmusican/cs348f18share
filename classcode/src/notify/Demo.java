@@ -34,7 +34,7 @@ class Drop {
 
   public synchronized void put(String message) {
     try {
-      if (full) wait();
+      while (full) wait();
       full = true;
       System.out.println("Putting: " + message);
       this.message = message;
