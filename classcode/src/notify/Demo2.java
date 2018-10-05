@@ -46,10 +46,10 @@ class Drop {
 }
 
 
-public class Demo {
-  public static Drop drop = new Drop();
+public class Demo2 {
+  public static Drop2 drop = new Drop2();
   public static void main(String[] args) {
-    (new Producer()).start();
-    (new Producer()).start();
-    (new Consumer()).start();
+    (new Producer2()).start();
+    (new Producer2()).start();
+    (new Consumer2()).start();
   }}

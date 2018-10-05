@@ -1,23 +1,23 @@
 package notify;
 
-class Producer extends Thread {
+class Producer2 extends Thread {
   public void run() {
     while (true) {
-      Demo.drop.put(getId() + " "+ Math.random());
+      Demo2.drop.put(getId() + " "+ Math.random());
     }
   }
 }
 
-class Consumer extends Thread {
+class Consumer2 extends Thread {
   public void run() {
     while (true) {
-      System.out.println("   Taking: " + Demo.drop.take());
+      System.out.println("   Taking: " + Demo2.drop.take());
     }
   }
 }
 
 
-class Drop {
+class Drop2 {
   private String message;
   private boolean full = false;
 
