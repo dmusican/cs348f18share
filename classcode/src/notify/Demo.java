@@ -23,7 +23,7 @@ class Drop2 {
 
   public synchronized String take() {
     try {
-      if (!full) wait();
+      while (!full) wait();
       full = false;
       notify();
       return message;
