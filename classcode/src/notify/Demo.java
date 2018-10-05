@@ -2,13 +2,17 @@ package notify;
 
 class Producer extends Thread {
   public void run() {
-    while (true) Demo.drop.put(getId() + " "+ Math.random());
+    while (true) {
+      Demo.drop.put(getId() + " "+ Math.random());
+    }
   }
 }
 
 class Consumer extends Thread {
   public void run() {
-    while (true) System.out.println("         Taking: " + Demo.drop.take());
+    while (true) {
+      System.out.println("   Taking: " + Demo.drop.take());
+    }
   }
 }
 
@@ -23,7 +27,9 @@ class Drop {
       full = false;
       notify();
       return message;
-    } catch (InterruptedException e) {throw new RuntimeException(e);}
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    }
   }
 
   public synchronized void put(String message) {
@@ -33,7 +39,9 @@ class Drop {
       System.out.println("Putting: " + message);
       this.message = message;
       notify();
-    } catch (InterruptedException e) {throw new RuntimeException(e);}
+    } catch (InterruptedException e) {
+      throw new RuntimeException(e);
+    }
   }
 }
 
