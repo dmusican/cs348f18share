@@ -6,11 +6,11 @@ class Bakery {
   public void lock() {
     int i = ThreadID.get();
     flag[i] = true;
-    label[i] = max(label[...]) + 1;    // max does obvious
+    label[i] = max(label[...]) + 1;    // max of array
     boolean waiting = true;
     while (waiting) {
-        waiting = false;     // can I go? please?
-        for (k=0; k < n; k++) {    // && !waiting if you like
+        waiting = false;          // I wanna go! Can I?
+        for (k=0; k < n; k++) {
               if (k != i && flag[k] && (label[k], k) << (label[i],i)) {
                   // pseudocode tuple <
                  waiting = true;
