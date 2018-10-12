@@ -1,5 +1,5 @@
 class Filter {
-    public static final int n = 10; // or whatever
+  public static final int n = 10; // or whatever
   private int[] level = new int[n];
   private int[] yielder = new int[n];
 
