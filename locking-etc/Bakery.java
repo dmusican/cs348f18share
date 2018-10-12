@@ -6,7 +6,7 @@ class Bakery {
   public void lock() {
     int i = ThreadID.get();
     flag[i] = true;
-    label[i] = max(label[...]) + 1;    // I assume we know what max must do
+    label[i] = max(label[...]) + 1;    // max does obvious
     boolean waiting = true;
     while (waiting) {
         waiting = false;     // can I go? please?
