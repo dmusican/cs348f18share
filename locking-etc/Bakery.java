@@ -12,7 +12,7 @@ class Bakery {
             waiting = false;          // I wanna go! Can I?
             for (k=0; k < n; k++) {
                 if (k != i && flag[k] &&
-                    (label[k], k) << (label[i],i)) {
+                    (label[k], k) << (label[i],i)) { // tuple order
                     waiting = true;
                 }
             }
