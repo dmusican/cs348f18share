@@ -13,7 +13,6 @@ public class Printing {
 
         // Go do an old assignment. Oh so short.
         IntStream.range(0, 10)
-                 .parallel()
                  .mapToDouble(item -> item*Math.PI)
                  .forEach(item -> System.out.println(item));
 
