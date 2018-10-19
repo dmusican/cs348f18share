@@ -13,7 +13,7 @@ public class Printing {
 
         // Go do an old assignment. Oh so short.
         IntStream.range(0, 10)
-                 .mapToDouble(item -> item*Math.PI)
+                 .mapToDouble(item -> Math.sin(item))
                  .forEach(item -> System.out.println(item));
 
     }
