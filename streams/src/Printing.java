@@ -14,7 +14,7 @@ public class Printing {
         // Go do an old assignment. Oh so short.
         long start = System.currentTimeMillis();
         double answer = IntStream.range(0, 10_000_000)
-                                 .parallel()
+//                                 .parallel()
                                  .mapToDouble(item -> Math.sin(item))
                                  .reduce(0, (a,b) -> a + b);
         System.out.println(answer);
