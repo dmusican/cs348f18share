@@ -8,7 +8,7 @@ public class Printing {
             myList.add(i);
         }
 
-        myList.stream().forEach(item -> System.out.print(item + " "));
+        myList.parallelStream().forEach(item -> System.out.print(item + " "));
 
 
     }
