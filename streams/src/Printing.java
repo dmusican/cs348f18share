@@ -12,9 +12,10 @@ public class Printing {
 //        myList.parallelStream().forEach(item -> System.out.print(item + " "));
 
         // Go do an old assignment. Oh so short.
-        IntStream.range(0, 10)
-                 .mapToDouble(item -> Math.sin(item))
-                 .forEach(item -> System.out.println(item));
+        double answer = IntStream.range(0, 10)
+                                 .mapToDouble(item -> Math.sin(item))
+                                 .reduce(0, (a,b) -> a + b);
+        System.out.println(answer);
 
     }
 }
