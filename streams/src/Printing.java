@@ -8,8 +8,8 @@ public class Printing {
             myList.add(i);
         }
 
-        myList.stream().forEach(item -> System.out.println(item));
-        
+        myList.stream().forEach(item -> System.out.print(item + " "));
+
 
     }
 }
