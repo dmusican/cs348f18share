@@ -46,7 +46,7 @@ public class GUISample2 extends Application {
             Worker w = new Worker();
             w.start();
 
-            label.setText("The answer is " + answer);
+            //label.setText("The answer is " + answer);
             //grid.getChildren().remove(bar);
         });
 
