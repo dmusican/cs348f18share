@@ -39,7 +39,7 @@ public class GUISample extends Application {
                                      .reduce(0, (a,b) -> a + b);
 
             label.setText("The answer is " + answer);
-            //grid.getChildren().remove(bar);
+            grid.getChildren().remove(bar);
         });
 
         primaryStage.setScene(new Scene(grid, 500, 250));
