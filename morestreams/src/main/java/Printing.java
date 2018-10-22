@@ -1,6 +1,7 @@
 import io.reactivex.Observable;
 
 import java.util.ArrayList;
+import java.util.concurrent.TimeUnit;
 import java.util.stream.IntStream;
 
 public class Printing {
@@ -23,10 +24,13 @@ public class Printing {
 //        System.out.println(System.currentTimeMillis() - start);
 
         // Rewrite instead with RxJava
-        Observable.range(0, 10_000_000)
-                  .map(e -> Math.sin(e))
-                  .reduce(0.0, (a,b) -> a+b)
-                  .subscribe(answer -> System.out.println(answer));
+//        Observable.range(0, 10_000_000)
+//                  .map(e -> Math.sin(e))
+//                  .reduce(0.0, (a,b) -> a+b)
+//                  .subscribe(answer -> System.out.println(answer));
+
+        Observable.interval(1, TimeUnit.SECONDS)
+                  .subscribe(item -> System.out.println(item));
 
     }
 }
