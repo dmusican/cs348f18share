@@ -32,5 +32,7 @@ public class Printing {
         Observable.interval(1, TimeUnit.SECONDS)
                   .subscribe(item -> System.out.println(item));
 
+        while(true);
+
     }
 }
