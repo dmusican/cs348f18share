@@ -1,4 +1,7 @@
 import pyspark.sql.functions as psf
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName("wordcount").getOrCreate()
 
 #lines = spark.read.text("gutenberg")
 lines = spark.read.text("/Accounts/dmusicant/Downloads/gutenberg/gutenberg/*/b*")
