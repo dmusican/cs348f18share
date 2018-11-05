@@ -9,5 +9,5 @@ words1 = lines.select(psf.split("value","\s")) \
 words2 = words1.select(psf.explode("wordlist")) \
               .toDF("word")
 
-results = words2.groupBy("word"). \
+results = words2.groupBy("word") \
                 .agg(psf.count("word"))
