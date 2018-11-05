@@ -8,7 +8,11 @@ words1 = lines.select(psf.input_file_name(), \
                       psf.split("value","\s")) \
               .toDF("filename", "wordlist")
 
-words2 = words1.select(psf.explode("wordlist")) \
+words1a = words1.select(\
+        psf.split("filename","/"), "wordlist") \
+           .toDF("filenamesplit", "wordlist")
+
+words2 = words1a.select(psf.explode("wordlist")) \
               .toDF("word")
 
 results = words2.groupBy("word") \
