@@ -15,7 +15,7 @@ words1a = words1.select(\
 words1b = words1a.select(\
             words1a.filenamesplit[ \
             psf.size(words1a.filenamesplit)-1] \
-                         , "wordlist")
+                         , "wordlist") \
            .toDF("realfilename", "wordlist")
 
 words2 = words1b.select(psf.explode("wordlist")) \
