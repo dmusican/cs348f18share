@@ -18,12 +18,12 @@ words1b = words1a.select(\
                          , "wordlist") \
            .toDF("realfilename", "wordlist")
 
-words2 = words1b.select(psf.explode("wordlist")) \
-              .toDF("word")
+words2 = words1b.select("realfilename",psf.explode("wordlist")) \
+              .toDF("realfilename","word")
 
-results = words2.groupBy("word") \
+results = words2.groupBy("realfilename","word") \
                 .agg(psf.count("word")) \
-                .toDF("word","thecount")
+                .toDF("filename","word","thecount")
 
 #results.show()
 
