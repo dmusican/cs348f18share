@@ -1,2 +1,5 @@
 lines = spark.read.text("gutenberg")
-lines.show()
+#lines.show()
+
+words = lines.select("value")
+words.show()
