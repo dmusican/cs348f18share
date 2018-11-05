@@ -13,4 +13,4 @@ results = words2.groupBy("word") \
                 .agg(psf.count("word")) \
                 .toDF("word","thecount")
 
-results.write.save("output", format="csv")
+results.repartition(1).write.save("output", format="csv")
