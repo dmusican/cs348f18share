@@ -6,7 +6,8 @@ lines = spark.read.text("gutenberg")
 words1 = lines.select(psf.split("value","\s")) \
               .toDF("wordlist")
 
-words2 = words1.select(psf.explode("wordlist"))
+words2 = words1.select(psf.explode("wordlist")) \
+              .toDF("word")
 
-
-words.show()
+results = words2.groupBy("word"). \
+                .agg(psf.count("word"))
