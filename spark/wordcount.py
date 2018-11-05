@@ -1,6 +1,7 @@
 import pyspark.sql.functions as psf
 
-lines = spark.read.text("gutenberg")
+#lines = spark.read.text("gutenberg")
+lines = spark.read.text("/Accounts/dmusicant/Downloads/gutenberg/gutenberg/*/b*")
 #lines.show()
 
 words1 = lines.select(psf.split("value","\s")) \
