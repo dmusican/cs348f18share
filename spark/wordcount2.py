@@ -12,7 +12,13 @@ words1a = words1.select(\
         psf.split("filename","/"), "wordlist") \
            .toDF("filenamesplit", "wordlist")
 
-words2 = words1a.select(psf.explode("wordlist")) \
+words1b = words1a.select(\
+            words1a.filenamesplit[ \
+            psf.size(words1a.filenamesplit)-1] \
+                         , "wordlist")
+           .toDF("realfilename", "wordlist")
+
+words2 = words1b.select(psf.explode("wordlist")) \
               .toDF("word")
 
 results = words2.groupBy("word") \
