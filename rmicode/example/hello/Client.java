@@ -53,6 +53,7 @@ public class Client {
             Counter counter = new Counter();
             String response = stub.sayHello(5, counter);
             System.out.println("response: " + response);
+            System.out.println("whawhawha");
 
 //            response = stub.sayHello(3, counter);
 //           System.out.println("response: " + response);
