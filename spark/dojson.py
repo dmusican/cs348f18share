@@ -10,4 +10,4 @@ yourdata = mydata.select("impressionId", "modelId")
 ourdata = mydata.select("impressionId", "browserCookie")
 
 yourdata.show()
-outdata.show()
+ourdata.show()
