@@ -11,3 +11,8 @@ ourdata = mydata.select("impressionId", "browserCookie")
 
 yourdata.show()
 ourdata.show()
+
+joineddata = yourdata.join(ourdata,
+       yourdata.impressionId == ourdata.impressionId)
+
+joineddata.show()
