@@ -16,3 +16,7 @@ joineddata = yourdata.join(ourdata,
        yourdata.impressionId == ourdata.impressionId)
 
 joineddata.show()
+
+results = joineddata.groupby(yourdata.impressionId) \
+           .agg(collect_list("modelId"))
+results.show()
