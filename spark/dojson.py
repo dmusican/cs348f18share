@@ -18,5 +18,5 @@ joineddata = yourdata.join(ourdata,
 joineddata.show()
 
 results = joineddata.groupby(yourdata.impressionId) \
-           .agg(collect_list("modelId"))
+           .agg(psf.collect_list("modelId"))
 results.show()
