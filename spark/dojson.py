@@ -7,4 +7,7 @@ mydata = spark.read.json("/Accounts/dmusicant/currentwork/cs348f18share/spark/js
 
 yourdata = mydata.select("impressionId", "modelId")
 
+ourdata = mydata.select("impressionId", "browserCookie")
+
 yourdata.show()
+outdata.show()
